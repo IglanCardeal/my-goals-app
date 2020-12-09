@@ -1,6 +1,7 @@
 import React from "react";
-import { View, Button, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 
+import AppButton from "../AppButton";
 interface Props {
   id: string;
   title: string;
@@ -9,14 +10,6 @@ interface Props {
 
 const GoalItem = (props: Props) => {
   return (
-    // <TouchableOpacity
-    //   onPress={() => props.onDelete(props.id)}
-    //   activeOpacity={0.5}
-    // >
-    //   <View style={styles.listItems}>
-    //     <Text>{props.title}</Text>
-    //   </View>
-    // </TouchableOpacity>
     <View>
       <View style={styles.listItems}>
         <View style={styles.listItemTitle}>
@@ -25,27 +18,30 @@ const GoalItem = (props: Props) => {
 
         <View style={styles.listItemsButtons}>
           <View style={styles.finishedButton}>
-            <Button
+            <AppButton
               title="Finished"
-              color="green"
+              size="sm"
+              color="#f06543"
               onPress={() => {
                 console.log("Finished");
               }}
             />
           </View>
           <View style={styles.editButton}>
-            <Button
+            <AppButton
               title="Edit"
-              color="orange"
+              size="sm"
+              color="#e0dfd5"
               onPress={() => {
                 console.log("edit");
               }}
             />
           </View>
           <View style={styles.removeButton}>
-            <Button
+            <AppButton
               title="Remove"
-              color="red"
+              size="sm"
+              color="#f7cba1"
               onPress={() => {
                 console.log("remove");
               }}
@@ -60,11 +56,10 @@ const GoalItem = (props: Props) => {
 const styles = StyleSheet.create({
   listItems: {
     padding: 10,
-    backgroundColor: "#3a8e99",
-    borderColor: "#000",
-    borderWidth: 1,
+    backgroundColor: "#f09d51",
     borderRadius: 10,
     marginVertical: 10,
+    marginHorizontal: 5,
     flexDirection: "column",
     alignItems: "center",
   },
@@ -76,7 +71,7 @@ const styles = StyleSheet.create({
 
   listItemTitleText: {
     fontSize: 20,
-    color: 'white'
+    color: "#313638",
   },
 
   listItemsButtons: {
